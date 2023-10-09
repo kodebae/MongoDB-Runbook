@@ -20,10 +20,11 @@
 ## 🗺️ MongoDB Atlas
 > MongoDB Atlas is a cloud-hosted database service provided by MongoDB for hosting and managing MongoDB databases. It allows you to deploy, scale, and manage MongoDB databases with ease. Here's a quick rundown of MongoDB Atlas along with an example in Java code:
 
-1. Create a MongoDB Atlas Cluster:
+### 1. Create a MongoDB Atlas Cluster:
 
 To get started with MongoDB Atlas, you need to create an Atlas cluster through the MongoDB Atlas dashboard. Follow the instructions on the website to set up your cluster.
-2. Connect to MongoDB Atlas from Java:
+
+### 2. Connect to MongoDB Atlas from Java:
 
 To connect to your MongoDB Atlas cluster from a Java application, you'll need the MongoDB Java Driver. You can add it to your project's dependencies using a tool like Maven or Gradle.
 
@@ -36,7 +37,7 @@ To connect to your MongoDB Atlas cluster from a Java application, you'll need th
 </dependency>
 ```
 
-3. Java Code to Connect to MongoDB Atlas:
+### 3. Java Code to Connect to MongoDB Atlas:
 
 Here's a basic Java code example to connect to your MongoDB Atlas cluster and perform a simple operation:
 
