@@ -39,7 +39,7 @@ To connect to your MongoDB Atlas cluster from a Java application, you'll need th
 
 ### 3. Java Code to Connect to MongoDB Atlas:
 
-Here's a basic Java code example to connect to your MongoDB Atlas cluster and perform a simple operation:
+> Here's a basic Java code example to connect to your MongoDB Atlas cluster and perform a simple operation:
 
 ```
 import com.mongodb.MongoClientSettings;
@@ -94,4 +94,9 @@ public class MongoDBAtlasExample {
 
 > Make sure to replace "your_username", "your_password", "your_cluster_url", "your_database_name", and "your_collection_name" with your actual MongoDB Atlas credentials and database details.
 
-This example demonstrates how to connect to MongoDB Atlas using the Java driver, authenticate with your credentials, and perform a simple insert operation. You can build upon this foundation to perform various database operations in your Java application.
+> This example demonstrates how to connect to MongoDB Atlas using the Java driver, authenticate with your credentials, and perform a simple insert operation. You can build upon this foundation to perform various database operations in your Java application.
+
+
+## Projections
+
+> Query projections in MongoDB allow you to control which fields are returned in the query results. This is particularly helpful for optimizing bandwidth and improving query performance.
