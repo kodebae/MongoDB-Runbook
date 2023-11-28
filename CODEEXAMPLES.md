@@ -273,6 +273,6 @@ MongoClient mongoClient = MongoClients.create(settings);
 ```
 ---
 
-## Projections
+# Projections
 
 > Query projections in MongoDB allow you to control which fields are returned in the query results. This is particularly helpful for optimizing bandwidth and improving query performance.
