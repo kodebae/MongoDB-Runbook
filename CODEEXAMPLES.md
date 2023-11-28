@@ -2,7 +2,7 @@
 
 ## 1. Create Operation
 
-In this example, we connect to a MongoDB server, access a specific database and collection, create a new document, and insert it into the collection.
+> In this example, we connect to a MongoDB server, access a specific database and collection, create a new document, and insert it into the collection.
 
 ```
 // Import necessary MongoDB Java driver classes
@@ -39,9 +39,9 @@ public class MongoDBExample {
 ```
 ---
 
-2. Read Operation
+## 2. Read Operation
 
-In this example, we query the collection to find documents where the "city" field is "New York" and print the results.
+> In this example, we query the collection to find documents where the "city" field is "New York" and print the results.
 
 ```
 // Assuming you have the MongoClient and collection already initialized
@@ -60,4 +60,69 @@ try (MongoCursor<Document> cursor = collection.find(query).iterator()) {
 }
 ```
 ---
+
+## 3. Update Operation
+
+> In this example, we're updating the document(s) where the "name" is "John Doe" to set the "age" field to 26.
+
+```
+// Assuming you have the MongoClient and collection already initialized
+
+// Define the condition for the update
+Document query = new Document("name", "John Doe");
+
+// Define the update operation
+Document update = new Document("$set", new Document("age", 26));
+
+// Perform the update operation
+UpdateResult result = collection.updateOne(query, update);
+
+// Print the result
+System.out.println("Matched " + result.getMatchedCount() + " document(s) and modified " + result.getModifiedCount() + " document(s).");
+```
+---
+
+## 4. Delete Operation
+
+> In this example, we're deleting the document where the "name" is "John Doe."
+
+```
+// Assuming you have the MongoClient and collection already initialized
+
+// Define the condition for the delete
+Document query = new Document("name", "John Doe");
+
+// Perform the delete operation
+DeleteResult result = collection.deleteOne(query);
+
+// Print the result
+System.out.println("Deleted " + result.getDeletedCount() + " document(s).");
+
+```
+
+## 5. Aggregation Operations
+
+> Aggregations allow us to perform data transformations and computations on the data stored in MongoDB. In this example, we're using the aggregation pipeline to match documents where the "city" is "New York" and then group them by city, calculating the average age for each city.
+
+```
+// Assuming you have the MongoClient and collection already initialized
+
+// Define the aggregation pipeline
+List<Bson> pipeline = Arrays.asList(
+        // Match documents where the "city" is "New York"
+        Aggregates.match(Filters.eq("city", "New York")),
+        // Group documents by "city" and calculate the average age for each city
+        Aggregates.group("$city", Accumulators.avg("averageAge", "$age"))
+);
+
+// Execute the aggregation pipeline
+try (MongoCursor<Document> cursor = collection.aggregate(pipeline).iterator()) {
+    while (cursor.hasNext()) {
+        Document result = cursor.next();
+        System.out.println(result.toJson());
+    }
+} catch (Exception e) {
+    System.err.println("Error: " + e.getMessage());
+}
+```
 
