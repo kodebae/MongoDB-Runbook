@@ -1,6 +1,6 @@
 # 🍃 MongoDB Runbook
 
-
+<img align="center" alt="Coding" width="1200" src="https://media.giphy.com/media/LaVp0AyqR5bGsC5Cbm/giphy.gif">
 
 ## Intro
 > MongoDB is a popular, open-source, NoSQL database management system that is designed to store, retrieve, and manage vast amounts of data in a flexible and scalable manner. Here's a quick introduction to some of its key features and concepts:
@@ -97,8 +97,3 @@ public class MongoDBAtlasExample {
 > Make sure to replace "your_username", "your_password", "your_cluster_url", "your_database_name", and "your_collection_name" with your actual MongoDB Atlas credentials and database details.
 
 > This example demonstrates how to connect to MongoDB Atlas using the Java driver, authenticate with your credentials, and perform a simple insert operation. You can build upon this foundation to perform various database operations in your Java application.
-
-
-## Projections
-
-> Query projections in MongoDB allow you to control which fields are returned in the query results. This is particularly helpful for optimizing bandwidth and improving query performance.
